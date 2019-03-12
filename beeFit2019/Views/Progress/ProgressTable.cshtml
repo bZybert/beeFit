@@ -1,0 +1,61 @@
+﻿@model beeFit2019.Models.User
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="table-primary" scope="col">Day</th>
+                <th class="table-primary" scope="col">L Bic</th>
+                <th class="table-primary" scope="col">R Bic</th>
+                <th class="table-primary" scope="col">Waist</th>
+                <th class="table-primary" scope="col">Chest</th>
+                <th class="table-primary" scope="col">L Thith</th>
+                <th class="table-primary" scope="col">R Thith</th>
+                <th class="table-primary" scope="col">Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var body in Model.BodyMeasurements){ 
+            
+            <tr class="table">
+                
+                <td class="table-light">@DateTime.Today.ToString()</td>
+                <td class="table-light">@body.LBic</td>
+                <td class="table-light">@body.RBic</td>
+                <td class="table-light">@body.Waist</td>
+                <td class="table-light">@body.Chest</td>
+                <td class="table-light">@body.LThigh</td>
+                <td class="table-light">@body.RThigh</td>
+                <td class="table-light">@body.Weight</td>
+                
+            </tr>
+            
+            
+            }
+            
+
+        </tbody>
+        <tfoot>
+            <tr class="table-primary">
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr />
+
+    <div class="row">
+        <a class="nav-link" asp-controller="Home" asp-action="Options">back to options</a>
+    </div>
+</div>

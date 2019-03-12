@@ -1,0 +1,32 @@
+﻿<div class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profile</a>
+            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" asp-controller="Profile" asp-action="SetProfileDetails">Update profile</a>
+                <a class="dropdown-item" href="#">Your records</a>
+                <a class="dropdown-item" href="#">Set Goals</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Training plan</a>
+            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
+                <a class="dropdown-item" href="#">Edit training day</a>
+                <a class="dropdown-item" asp-controller="Training" asp-action="ViewOfTheWeek">Your training plan</a>
+                <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Progress" asp-action="ProgressTable">Progress table</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Gallery</a>
+        </li>
+
+    </ul>
+</div>
