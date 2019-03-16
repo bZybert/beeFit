@@ -35,13 +35,13 @@ namespace beeFit2019
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            /*
+          
             services.AddDbContext<DataContext>(builder =>
             {
-                var cs = @"Data Source=.\SQLEXPRESS;Initial Catalog=mvc;Integrated Security=True";
+                var cs = @"Data Source=.\SQLEXPRESS;Initial Catalog=beeFit;Integrated Security=True";
                 builder.UseSqlServer(cs);
-            });*/
-            services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            });
+             /* services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));*/
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DataContext>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

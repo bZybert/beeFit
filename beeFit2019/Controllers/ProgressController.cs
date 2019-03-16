@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using beeFit2019.Data;
+using beeFit2019.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,10 +18,21 @@ namespace beeFit2019.Controllers
             _context = dataContext;
         }
 
-        public IActionResult ProgressTable(int id)
+        public async Task<IActionResult> ProgressTable()
         {
-            var body = _context.Users.Where(x=>x.Id == id).Include(x=>x.BodyMeasurements).ToList();
-            return View(body);
+            var userId = await _context.Users.SingleOrDefaultAsync(x => x.Name == User.Identity.Name);
+
+            var progressList = _context.BodyParameters.ToList();
+
+            progressList = progressList.FindAll(x => x.UserId == userId.Id).ToList();
+            
+            if(progressList != null)
+            {
+            return View(progressList);
+            }
+
+            return View("NoProgressData");
+            
         }
     }
 }

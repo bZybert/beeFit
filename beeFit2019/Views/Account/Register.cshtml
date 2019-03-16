@@ -1,4 +1,4 @@
-﻿@model beeFit2019.ViewModels.UserForRegisterViewModel
+﻿@model beeFit2019.Models.User
 @{
     ViewData["Title"] = "Register";
 }
@@ -21,7 +21,7 @@
                     @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
                         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-                        
+
                         @Html.ValidationMessageFor(x => x.Name)
                     </div>
                 </div>
@@ -33,13 +33,20 @@
                     </div>
                 </div>
                 <div class="form-group form-inline">
+                    @Html.LabelFor(m => m.DateOfBirth , new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.DateOfBirth, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+                </div>
+                <div class="form-group form-inline">
                     @Html.LabelFor(m => m.Height, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
                         @Html.TextBoxFor(m => m.Height, new { @class = "form-control" })
                         @Html.ValidationMessageFor(x => x.Height)
                     </div>
                 </div>
-    
+
 
                 <div class="form-group form-inline">
                     @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
@@ -48,7 +55,7 @@
                         @Html.ValidationMessageFor(x => x.Password)
                     </div>
                 </div>
-               
+
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-info ">Save changes</button>
                     <a class="btn btn-secondary" asp-controller="Home" asp-action="Index">Close</a>

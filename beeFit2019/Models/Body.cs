@@ -10,7 +10,7 @@ namespace beeFit2019.Models
     {
         public int Id { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
-        [Display(Name = "Date: MM/dd/yyy")]
+        [Display(Name = "Date: MM/dd/yyyy")]
         public DateTime Day { get; set; }
         [Display(Name = "Left biceps")]
         public double LBic { get; set; }
@@ -23,5 +23,7 @@ namespace beeFit2019.Models
         [Display(Name = "Right thigh")]
         public double RThigh { get; set; }
         public double Weight { get; set; }
+
+       public int  UserId { get; set; }
     }
 }

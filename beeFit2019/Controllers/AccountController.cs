@@ -32,13 +32,13 @@ namespace beeFit2019.Controllers
         [HttpGet]
         public IActionResult Register()
         {
-            var user = _dataContext.Users.ToList();
+            
 
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(UserForRegisterViewModel viewModel)
+        public async Task<IActionResult> Register(User viewModel)
         {
             viewModel.Name = viewModel.Name.ToLower();
 
@@ -48,16 +48,20 @@ namespace beeFit2019.Controllers
                 var result = await UserManager.CreateAsync(user, viewModel.Password);  
                 if (result.Succeeded)
                 {
+                 
+
                     var newUser = new User
                     {
                         Name = viewModel.Name,
                         Email = viewModel.Email,
                         Password = viewModel.Password,
                         Height = viewModel.Height,
+                        DateOfBirth = viewModel.DateOfBirth
+                        
                         
                     };
 
-                    await _dataContext.Users.AddAsync(newUser);
+                    await _dataContext.Users.AddAsync(newUser); 
                     await _dataContext.SaveChangesAsync();
                     
                     return RedirectToAction("SetProfileDetails", "Profile");
