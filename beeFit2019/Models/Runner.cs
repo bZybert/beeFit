@@ -13,7 +13,9 @@ namespace beeFit2019.Models
         public DateTime Day { get; set; }
         public int Distance;
         public string Time;
-        public string Record;
-        public string Goal;
+        //public string Record;
+        //public string Goal;
+        public double Weight { get; set; }
+        public int UserId { get; set; }
     }
 }

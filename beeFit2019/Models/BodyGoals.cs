@@ -8,7 +8,7 @@ namespace beeFit2019.Models
     public class BodyGoals
     {
         public int Id { get; set; }
-        public DateTime Day { get; set; }
+        public DateTime? Day { get; set; }
         public double LBic { get; set; }
         public double RBic { get; set; }
         public double Waist { get; set; }
@@ -16,5 +16,7 @@ namespace beeFit2019.Models
         public double LThigh { get; set; }
         public double RThigh { get; set; }
         public double Weight { get; set; }
+
+        public int UserId { get; set; }
     }
 }
